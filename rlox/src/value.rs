@@ -19,7 +19,7 @@ union ValueUnion {
 impl Debug for ValueUnion {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
         unsafe {
-            write!(f, "ValueUnion [ byte_format: {:#08x}b : {:?}, f : {:} ]", self.f as u64, self.b, self.f)
+            write!(f, "ValueUnion [ byte_format: {:#08x} b: {:?}, f: {:} ]", self.f as u64, self.b, self.f)
         }
     }
 }
@@ -114,7 +114,7 @@ impl Value {
         }
     }
 
-    pub fn nil_val(value: f64) -> Self {
+    pub fn nil_val() -> Self {
         Value {
             _type: ValueType::Nil,
             _as: ValueUnion { f: 0.0 }
