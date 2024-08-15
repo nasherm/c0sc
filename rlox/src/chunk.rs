@@ -47,7 +47,7 @@ impl Chunk {
                 OpCode::Byte(value_array_index) => {
                     assert!(value_array_index < self.value_array.count() as u8);
                     assert_eq!(
-                        self.value_array[value_array_index as usize],
+                        self.value_array[value_array_index as usize].as_num(),
                         expected_value_array[value_array_index as usize]);
                     },
                     _ => (),

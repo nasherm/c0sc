@@ -204,7 +204,7 @@ impl Compiler {
             Some(num_string) => num_string.parse::<f64>().unwrap(),
             _ => panic!(),
         };
-        self.emit_constant(value as Value);
+        self.emit_constant(Value::num_val(value));
     }
 
     fn emit_constant(&mut self, value: Value) -> () {
